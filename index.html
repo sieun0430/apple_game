@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>🍎 사과게임 - 합쳐서 10을 만들어봐! 🍏</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Jua&family=Outfit:wght@600;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jua&family=Outfit:wght@600;800;900&display=swap"
+    rel="stylesheet">
   <style>
     :root {
       --bg-cream: #FFF9F2;
@@ -36,7 +38,7 @@
 
     body {
       background-color: var(--bg-cream);
-      background-image: 
+      background-image:
         radial-gradient(#F0DCD3 1.5px, transparent 1.5px),
         radial-gradient(#F0DCD3 1.5px, var(--bg-cream) 1.5px);
       background-size: 24px 24px;
@@ -121,6 +123,7 @@
       box-shadow: 2px 3px 0 var(--shadow-color);
       transition: transform 0.08s, box-shadow 0.08s;
     }
+
     .sound-toggle-btn:active {
       transform: translate(2px, 2px);
       box-shadow: 0px 0px 0 var(--shadow-color);
@@ -146,9 +149,17 @@
       justify-content: center;
     }
 
-    .stat-card.timer-card { background: #EBF8FF; }
-    .stat-card.score-card { background: #FFF4E5; }
-    .stat-card.high-card  { background: #F6EDFF; }
+    .stat-card.timer-card {
+      background: #EBF8FF;
+    }
+
+    .stat-card.score-card {
+      background: #FFF4E5;
+    }
+
+    .stat-card.high-card {
+      background: #F6EDFF;
+    }
 
     .stat-label {
       font-size: 0.75rem;
@@ -220,14 +231,24 @@
       color: var(--primary-red);
       font-weight: 900;
     }
+
     .sum-indicator.valid {
       background: #D4FDD7;
       animation: pulseValid 0.2s ease;
     }
+
     @keyframes pulseValid {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.06); }
-      100% { transform: scale(1); }
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.06);
+      }
+
+      100% {
+        transform: scale(1);
+      }
     }
 
     /* Game Board Canvas Container */
@@ -276,8 +297,15 @@
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.97); }
-      to { opacity: 1; transform: scale(1); }
+      from {
+        opacity: 0;
+        transform: scale(0.97);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
     }
 
     .overlay-card {
@@ -330,6 +358,7 @@
       box-shadow: 3px 4px 0px var(--shadow-color);
       transition: all 0.08s ease;
     }
+
     .btn-big:active {
       transform: translate(2px, 3px);
       box-shadow: 1px 1px 0px var(--shadow-color);
@@ -392,14 +421,32 @@
 
     /* Responsive adjustments */
     @media (max-width: 480px) {
-      .title-box h1 { font-size: 1.3rem; }
-      .stat-value { font-size: 1.2rem; }
-      .btn-action { font-size: 0.95rem; padding: 8px 10px; }
-      .sum-indicator { font-size: 0.85rem; min-width: 105px; padding: 6px 10px; }
-      .sum-indicator span { font-size: 1.1rem; }
+      .title-box h1 {
+        font-size: 1.3rem;
+      }
+
+      .stat-value {
+        font-size: 1.2rem;
+      }
+
+      .btn-action {
+        font-size: 0.95rem;
+        padding: 8px 10px;
+      }
+
+      .sum-indicator {
+        font-size: 0.85rem;
+        min-width: 105px;
+        padding: 6px 10px;
+      }
+
+      .sum-indicator span {
+        font-size: 1.1rem;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <div class="game-wrapper">
@@ -549,7 +596,7 @@
             osc.start(now + i * 0.04);
             osc.stop(now + i * 0.04 + 0.25);
           });
-        } catch(e) {}
+        } catch (e) { }
       }
 
       playGameOver() {
@@ -570,7 +617,7 @@
             osc.start(now + idx * 0.14);
             osc.stop(now + idx * 0.14 + 0.2);
           });
-        } catch(e) {}
+        } catch (e) { }
       }
     }
 
@@ -1106,5 +1153,5 @@
     requestAnimationFrame(render);
   </script>
 </body>
-</html>
 
+</html>
